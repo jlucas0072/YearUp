@@ -21,10 +21,10 @@ public class LargestNumber {
 		newLN.LargestNumberUsingWhileLoop(anArray);
 		System.out.println("Empty array test: ");
 		newLN.LargestNumberUsingForLoop(emptyArray);
-		newLN.LargestNumberUsingForLoop(emptyArray);
+		newLN.LargestNumberUsingWhileLoop(emptyArray);
 		System.out.println("Null array test: ");
 		newLN.LargestNumberUsingForLoop(nullArray);
-		newLN.LargestNumberUsingForLoop(nullArray);
+		newLN.LargestNumberUsingWhileLoop(nullArray);
 
 	}
 	
@@ -32,6 +32,8 @@ public class LargestNumber {
 	{
 		if (anArray != null)
 		{
+			if (anArray.length > 0)
+			{
 			int largest = -1;
 			
 			for(int i = 0; i < anArray.length; i++)
@@ -42,16 +44,21 @@ public class LargestNumber {
 				{
 					largest = current;
 				}
-
 			}
-			
 			System.out.println(largest);
 		}
 		
+
+		else
+		{
+			System.out.println("This array does not have any numbers.");
+		}
+		}
 		else
 		{
 			System.out.println("You gave me a null array.");
 		}
+		
 	}
 	
 	public void LargestNumberUsingWhileLoop (int[] anArray)
@@ -64,18 +71,15 @@ public class LargestNumber {
 					int j = 0;
 					int largest = anArray[0];
 					
-					
-					
-					//while (current < anArray[j])
-					while (anArray[j] < anArray.length)
+					while (j < anArray.length)
 					{
 						int current = anArray[j];
 						if (current > largest)
 						{
 							largest = current;
 						}
+						j++;
 					}
-					j++;
 				System.out.println(largest);
 				}
 				else
