@@ -28,11 +28,11 @@ public class Loop {
 				System.out.println("The array contains " + search + " at index " + i + ".");
 				break;
 			}
-			/*else
+			else
 			{
 				System.out.println("The array does not contain " + search + ".");
 				break;
-			}*/
+			}
 		}
 	}
 
